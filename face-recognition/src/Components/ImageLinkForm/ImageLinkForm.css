@@ -1,0 +1,13 @@
+.form{
+    width: 700px;
+    background-color:red;
+    background-image:
+    radial-gradient(circle at 100% 150%, rgb(69, 204, 248) 24%, rgb(118, 246, 153) 24%, rgb(118, 246, 153) 28%, rgb(69, 204, 248) 28%, rgb(69, 204, 248) 36%, rgb(118, 246, 153) 36%, rgb(118, 246, 153) 40%, transparent 40%, transparent),
+    radial-gradient(circle at 0    150%, rgb(69, 204, 248) 24%, rgb(118, 246, 153) 24%, rgb(118, 246, 153) 28%, rgb(69, 204, 248) 28%, rgb(69, 204, 248) 36%, rgb(118, 246, 153) 36%, rgb(118, 246, 153) 40%, transparent 40%, transparent),
+    radial-gradient(circle at 50%  100%, rgb(118, 246, 153) 10%, rgb(69, 204, 248) 10%, rgb(69, 204, 248) 23%, rgb(118, 246, 153) 23%, rgb(118, 246, 153) 30%, rgb(69, 204, 248) 30%, rgb(69, 204, 248) 43%, rgb(118, 246, 153) 43%, rgb(118, 246, 153) 50%, rgb(69, 204, 248) 50%, rgb(69, 204, 248) 63%, rgb(118, 246, 153) 63%, rgb(118, 246, 153) 71%, transparent 71%, transparent),
+    radial-gradient(circle at 100% 50%, rgb(118, 246, 153) 5%, rgb(69, 204, 248) 5%, rgb(69, 204, 248) 15%, rgb(118, 246, 153) 15%, rgb(118, 246, 153) 20%, rgb(69, 204, 248) 20%, rgb(69, 204, 248) 29%, rgb(118, 246, 153) 29%, rgb(118, 246, 153) 34%, rgb(69, 204, 248) 34%, rgb(69, 204, 248) 44%, rgb(118, 246, 153) 44%, rgb(118, 246, 153) 49%, transparent 49%, transparent),
+    radial-gradient(circle at 0    50%, rgb(118, 246, 153) 5%, rgb(69, 204, 248) 5%, rgb(69, 204, 248) 15%, rgb(118, 246, 153) 15%, rgb(118, 246, 153) 20%, rgb(69, 204, 248) 20%, rgb(69, 204, 248) 29%, rgb(118, 246, 153) 29%, rgb(118, 246, 153) 34%, rgb(69, 204, 248) 34%, rgb(69, 204, 248) 44%, rgb(118, 246, 153) 44%, rgb(118, 246, 153) 49%, transparent 49%, transparent);
+    background-size: 100px 50px;
+}
+
+/*linear-gradient(to right, rgb(69, 204, 248), rgb(118, 246, 153));*/
