@@ -1,38 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Navigation from './Components/Navigation/Navigation';
 import Logo from './Components/Logo/Logo';
 import ImageLinkForm from './Components/ImageLinkForm/ImageLinkForm';
 import Rank from './Components/Rank/Rank';
+import FaceRecognition from './Components/FaceRecognition/FaceRecognition';
+//import particlesOptions from './Components/ParticleComponent/ParticlesOptions';
 import Particles from 'react-particles-js';
-
+import Clarifai from 'clarifai';
 import './App.css';
+import { render } from '@testing-library/react';
+
+const app = new Clarifai.App({
+  apiKey:'d4181550d4e742cb822545fe949818f3'
+});
 
 const particlesOptions = {
   "particles": {
     "number": {
-      "value": 80,
+      "value": 100,
       "density": {
         "enable": true,
         "value_area": 800
       }
     },
     "color": {
-      "value": "#000000"
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
-      }
+      "value": "#C0C0C0"
     },
     "opacity": {
       "value": 0.5,
@@ -57,7 +49,7 @@ const particlesOptions = {
     "line_linked": {
       "enable": true,
       "distance": 150,
-      "color": "#000000",
+      "color": "#C0C0C0",
       "opacity": 0.4,
       "width": 1
     },
@@ -77,7 +69,7 @@ const particlesOptions = {
     }
   },
   "interactivity": {
-    "detect_on": "canvas",
+    "detect_on": "window",
     "events": {
       "onhover": {
         "enable": true,
@@ -85,7 +77,7 @@ const particlesOptions = {
       },
       "onclick": {
         "enable": true,
-        "mode": "push"
+        "mode": "push",
       },
       "resize": true
     },
@@ -95,40 +87,52 @@ const particlesOptions = {
         "line_linked": {
           "opacity": 1
         }
-      },
-      "bubble": {
-        "distance": 400,
-        "size": 40,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 200,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
       }
     }
   },
   "retina_detect": true
 }
 
-function App() {
-  return (
-    <div className="App">
-      <Particles className='particles' params={particlesOptions}/>
-      <Navigation/>
-      <Logo/>
-      <Rank/>
-      <ImageLinkForm/>{/*
-      <FaceRecognition />*/}
-    </div>
-  );
+class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      input: '',
+      imageUrl: ''
+    }
+  }
+
+  onInputChange = (event) => {
+    this.setState({input: event.target.value});
+  }
+
+  onButtonSubmit = () => {
+    this.setState({imageUrl: this.state.input})
+    app.models.predict(
+      Clarifai.FACE_DETECT_MODEL,
+       this.state.input)
+       .then(
+      function(response) {
+        console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
+        // do something with response
+      },
+      function(err) {
+        // there was an error
+      }
+    );
+  }
+  render(){
+      return (
+        <div className="App">
+          <Particles className='particles' params={particlesOptions}/>
+          <Navigation/>
+          <Logo/> 
+          <Rank/>
+          <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
+          <FaceRecognition imageUrl={this.state.imageUrl} />
+        </div>
+      );
+  }
 }
 
 export default App;

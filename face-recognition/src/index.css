@@ -3,7 +3,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to right, rgb(69, 204, 248), rgb(118, 246, 153));
+  background: linear-gradient(to right, rgb(24, 14, 1), rgb(51, 55, 71));;
 }
 button{
   cursor:pointer;
