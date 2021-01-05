@@ -1,13 +1,17 @@
 import React from 'react';
+import './SignIn.css';
 
 class SignIn extends React.Component {
     constructor(props){
         super(props);
         this.state = {
             signInEmail: '',
-            signInPassword: ''
+            signInPassword: '',
+            signInSuccess: true
         }
     }
+    
+
     onEmailChange = (event) => {
         this.setState({signInEmail: event.target.value})
     }
@@ -25,14 +29,19 @@ class SignIn extends React.Component {
             })
         }).then(response => response.json()).then(user => {
             if (user.id){
+                this.setState ({signInSuccess: true});
                 this.props.loadUser(user);
                 this.props.onRouteChange('home');
+            }else{
+                this.setState ({signInSuccess: false});
             }
         })
         
     }
+   
     render() {
         const { onRouteChange } = this.props;
+        const { signInSuccess} = this.state;
         return (
             <article className="br3 ba white b--white-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
                 <main className="pa4 black-80 white">
@@ -63,6 +72,13 @@ class SignIn extends React.Component {
                         <div className="">
                             <input className="b ph3 pv2 input-reset ba b--white bg-transparent grow pointer f6 dib white" type="submit" value="Sign in" onClick= {this.onSubmitSignIn} />
                         </div>
+                        {
+                        !signInSuccess ? (
+                        <div className="mv3">
+                            <span>Failed to log in.</span>
+                        </div>) :
+                        <span></span>
+                        }
                         <div className="lh-copy mt3">
                             <p onClick={() => onRouteChange('register')} className="b ph4 pv1 input-reset ba b--white bg-transparent grow pointer f6 dib white">Register</p>
                         </div>
