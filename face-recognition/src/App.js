@@ -96,24 +96,25 @@ const particlesOptions = {
   "retina_detect": true
 }
 
+const intialState = {
+  input: '',
+  imageUrl: '',
+  box: {},
+  route: 'signin',
+  isSignedIn: false,
+  user: {
+    id: '',
+    name: '',
+    email: '',
+    password: '',
+    entries: 0,
+    joined: ''
+  }
+}
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      input: '',
-      imageUrl: '',
-      box: {},
-      route: 'signin',
-      isSignedIn: false,
-      user: {
-        id: '',
-        name: '',
-        email: '',
-        password: '',
-        entries: 0,
-        joined: ''
-      }
-    }
+    this.state = intialState;
   }
 
   loadUser = (data) => {
@@ -171,7 +172,7 @@ class App extends Component {
 
   onRouteChange = (route) => {
     if (route === 'signout') {
-      this.setState({ isSignedIn: false })
+      this.setState(intialState)
     }
     else if (route === 'home') {
       this.setState({ isSignedIn: true });
