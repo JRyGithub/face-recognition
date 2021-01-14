@@ -1,0 +1,16 @@
+.form{/*
+    width: 700px;
+    background-color:red;
+    background-image:
+    radial-gradient(circle at 100% 150%, rgb(24, 14, 1) 24%,rgb(51, 55, 71) 24%,rgb(51, 55, 71) 28%, rgb(24, 14, 1) 28%, rgb(24, 14, 1) 36%,rgb(51, 55, 71) 36%,rgb(51, 55, 71) 40%, transparent 40%, transparent),
+    radial-gradient(circle at 0    150%, rgb(24, 14, 1) 24%,rgb(51, 55, 71) 24%,rgb(51, 55, 71) 28%, rgb(24, 14, 1) 28%, rgb(24, 14, 1) 36%,rgb(51, 55, 71) 36%,rgb(51, 55, 71) 40%, transparent 40%, transparent),
+    radial-gradient(circle at 50%  100%,rgb(51, 55, 71) 10%, rgb(24, 14, 1) 10%, rgb(24, 14, 1) 23%,rgb(51, 55, 71) 23%,rgb(51, 55, 71) 30%, rgb(24, 14, 1) 30%, rgb(24, 14, 1) 43%,rgb(51, 55, 71) 43%,rgb(51, 55, 71) 50%, rgb(24, 14, 1) 50%, rgb(24, 14, 1) 63%,rgb(51, 55, 71) 63%,rgb(51, 55, 71) 71%, transparent 71%, transparent),
+    radial-gradient(circle at 100% 50%,rgb(51, 55, 71) 5%, rgb(24, 14, 1) 5%, rgb(24, 14, 1) 15%,rgb(51, 55, 71) 15%,rgb(51, 55, 71) 20%, rgb(24, 14, 1) 20%, rgb(24, 14, 1) 29%,rgb(51, 55, 71) 29%,rgb(51, 55, 71) 34%, rgb(24, 14, 1) 34%, rgb(24, 14, 1) 44%,rgb(51, 55, 71) 44%,rgb(51, 55, 71) 49%, transparent 49%, transparent),
+    radial-gradient(circle at 0    50%,rgb(51, 55, 71) 5%, rgb(24, 14, 1) 5%, rgb(24, 14, 1) 15%,rgb(51, 55, 71) 15%,rgb(51, 55, 71) 20%, rgb(24, 14, 1) 20%, rgb(24, 14, 1) 29%,rgb(51, 55, 71) 29%,rgb(51, 55, 71) 34%, rgb(24, 14, 1) 34%, rgb(24, 14, 1) 44%,rgb(51, 55, 71) 44%,rgb(51, 55, 71) 49%, transparent 49%, transparent);
+    background-size: 100px 50px;*/
+    background: linear-gradient(to right, rgb(24, 14, 1), rgb(51, 55, 71));;
+}
+
+/*linear-gradient(to right, rgb(24, 14, 1),rgb(51, 55, 71));*/
+
+/*linear-gradient(to right, rgb(24, 14, 1), rgb(51, 55, 71));*/
